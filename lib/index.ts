@@ -86,7 +86,6 @@ export class StaticWebsite extends cdk.Construct {
     // Create SSL certificate
     const hostedZone = this.lookupHostedZone(domainName);
     const certificate = this.createCertificate(domainName, hostedZone);
-
     // CloudFront distribution config
     this.distribution = this.createCloudFrontWebDistribution(
       this.bucket,
